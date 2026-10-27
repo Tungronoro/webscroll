@@ -12,9 +12,7 @@ const preference = matchMedia('(prefers-reduced-motion: reduce)');
 const journey = document.querySelector('#journey');
 const about = document.querySelector('#about-space');
 const bgm = document.querySelector('#bgm');
-const debugEl = document.querySelector('#debug');
-const debugCopy = document.querySelector('#debug-copy');
-if (debugCopy) debugCopy.addEventListener('click', () => { if (debugEl) { navigator.clipboard.writeText(debugEl.textContent).then(() => { debugCopy.textContent='Copied!'; setTimeout(()=>debugCopy.textContent='Copy debug',1200); }).catch(()=>{}); } });
+
 
 const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const ease = (a, b, v) => { const x = clamp((v - a) / (b - a)); return x * x * (3 - 2 * x); };
@@ -260,26 +258,6 @@ function tick(now) {
     }
   }
   const progress = (reduced || timedOut) ? target : (hasFrame ? presented : current);
-  if (debugEl) {
-    const seekable = Array.from({length: video.seekable.length}, (_,i) => `${video.seekable.start(i).toFixed(1)}-${video.seekable.end(i).toFixed(1)}`).join(',') || 'none';
-    const buffered = Array.from({length: video.buffered.length}, (_,i) => `${video.buffered.start(i).toFixed(1)}-${video.buffered.end(i).toFixed(1)}`).join(',') || 'none';
-    debugEl.textContent =
-      `ready=${ready} hasFrame=${hasFrame} timedOut=${timedOut}
-` +
-      `scrollY=${Math.round(scrollY)} sh=${document.documentElement.scrollHeight} ih=${innerHeight}
-` +
-      `target=${target.toFixed(3)} current=${current.toFixed(3)} presented=${presented.toFixed(3)}
-` +
-      `rs=${video.readyState} net=${video.networkState} dur=${(video.duration||0).toFixed(1)} seeking=${video.seeking}
-` +
-      `slowSeeks=${slowSeeks} lastReq=${lastRequested} lastReqTime=${lastRequestedTime.toFixed(2)} frameCount=${frameCount}
-` +
-      `seekedCount=${seekedCount} lastSeeked=${lastSeekedTime.toFixed(2)} rvfcCount=${rvfcCount}
-` +
-      `seekable=[${seekable}] buffered=[${buffered}]
-` +
-      (video.error ? `VIDEO ERROR: ${video.error.code} ${video.error.message}` : '');
-  }
   document.body.classList.toggle('end-state', progress >= 0.92);
   updateChapters(progress);
   render(progress);
