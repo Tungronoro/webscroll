@@ -1,0 +1,49 @@
+{
+  "duration": 75.625,
+  "fps": 24,
+  "frameCount": 1815,
+  "video": "assets/walkthrough.mp4",
+  "posters": [
+    "assets/poster-0.jpg",
+    "assets/poster-1.jpg",
+    "assets/poster-2.jpg",
+    "assets/poster-3.jpg",
+    "assets/poster-4.jpg"
+  ],
+  "chapters": [
+    {
+      "eyebrow": "01 / KHÔNG GIAN SỐNG",
+      "title": "NGÔI NHÀ CỦA BẠN.",
+      "accent": "BẮT ĐẦU TỪ ĐÂY.",
+      "description": "Một buổi chiều ở Hà Nội.<br>Chúng tôi dẫn bạn đi qua từng phòng.<br>Cuộn để bước vào.",
+      "start": 0,
+      "compact": false
+    },
+    {
+      "eyebrow": "02 / PHÒNG KHÁCH",
+      "title": "ÁNH SÁNG.",
+      "accent": "VẬT LIỆU.",
+      "description": "Gỗ, đá, vải và ánh sáng tự nhiên.<br>Mọi thứ được chọn để bạn cảm thấy ở nhà.",
+      "start": 0.25,
+      "compact": true,
+      "word": "ÁNH SÁNG<br>VẬT LIỆU."
+    },
+    {
+      "eyebrow": "03 / PHÒNG NGỦ",
+      "title": "YÊN TĨNH.",
+      "accent": "NGHỈ NGƠI.",
+      "description": "Một nơi để chậm lại.<br>Ánh sáng dịu, màu sắc tĩnh.",
+      "start": 0.5,
+      "compact": false
+    },
+    {
+      "eyebrow": "04 / BẾP & ĂN",
+      "title": "CÙNG NHAU.",
+      "accent": "Ở ĐÂY.",
+      "description": "Nơi gia đình tụ họp.<br>Bàn ăn, ánh sáng ấm, câu chuyện.",
+      "start": 0.75,
+      "compact": true,
+      "word": "CÙNG NHAU<br>Ở ĐÂY."
+    }
+  ]
+}

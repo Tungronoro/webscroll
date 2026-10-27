@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interior Walkthrough — Thiết kế nội thất</title>
+<link rel="stylesheet" href="cinematic.css">
+<meta name="description" content="Khám phá không gian sống qua từng phòng: phòng khách, phòng ngủ, bếp & ăn. Cuộn để bước vào.">
+<link rel="canonical" href="./">
+</head>
+<body>
+<div class="stage" aria-hidden="true">
+  <img id="poster" src="assets/poster-0.jpg" alt="">
+  <video id="film" muted playsinline preload="metadata"></video>
+  <canvas id="film-frame" width="1280" height="720"></canvas>
+  <div class="shade"></div>
+  <div class="grain"></div>
+  <div class="room-type"><span id="room-word">BẮT ĐẦU<br>BƯỚC VÀO.</span></div>
+</div>
+<header>
+  <a href="./" class="brand"><span class="owl">◉</span> INTERIOR<small>THIẾT KẾ NỘI THẤT</small></a>
+  <div class="edition">WALKTHROUGH<span>HÀ NỘI, VIỆT NAM</span></div>
+  <div class="experience-controls">
+    <button id="sound" aria-pressed="false" title="Bật/tắt âm thanh video">Bật âm thanh</button>
+    <button id="motion" aria-pressed="false">Giảm chuyển động</button>
+  </div>
+</header>
+<main id="journey"></main>
+<div id="load-status" role="status">
+  <span class="loading-dot"></span>
+  <span id="load-text">Đang chuẩn bị không gian…</span>
+  <button id="retry" hidden>Thử tải lại</button>
+</div>
+<dialog id="about-space" aria-labelledby="about-title">
+  <button class="close-dialog" aria-label="Đóng giới thiệu">×</button>
+  <p class="eyebrow">STUDIO + THIẾT KẾ NỘI THẤT</p>
+  <h2 id="about-title">Một không gian sống.<br><em>Được thiết kế cho bạn.</em></h2>
+  <p class="about-intro">Chúng tôi thiết kế và thi công nội thất cho căn hộ, nhà phố và văn phòng. Từ concept đến bản vẽ, từ vật liệu đến ánh sáng.</p>
+  <div class="principles">
+    <section><span>01 / LISTEN</span><h3>Lắng nghe.</h3><p>Cách bạn sống, làm việc và nghỉ ngơi. Mỗi dự án bắt đầu từ câu chuyện của bạn.</p></section>
+    <section><span>02 / DESIGN</span><h3>Thiết kế.</h3><p>Mặt bằng, 3D, vật liệu, ánh sáng. Mọi thứ được tính toán để đẹp và dùng được.</p></section>
+    <section><span>03 / BUILD</span><h3>Thi công.</h3><p>Giám sát, hoàn thiện, bàn giao. Chúng tôi đi cùng bạn đến khi ngôi nhà sẵn sàng.</p></section>
+    <section><span>04 / CARE</span><h3>Chăm sóc.</h3><p>Bảo hành và hỗ trợ sau bàn giao. Nhà bạn luôn trong trạng thái tốt nhất.</p></section>
+  </div>
+  <p class="about-end">Bạn có thể bắt đầu bằng một câu hỏi, một ý tưởng hoặc một căn phòng cần làm mới.</p>
+</dialog>
+<noscript><p class="noscript">Bật JavaScript để xem camera theo cuộn.</p></noscript>
+<audio id="bgm" src="assets/audio.mp3" loop preload="none"></audio>
+<script type="module" src="cinematic.js"></script>
+</body>
+</html>
