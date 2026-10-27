@@ -194,9 +194,9 @@ video.addEventListener('seeked', () => {
   seekedCount++;
   lastSeekedTime = video.currentTime;
   const delay = performance.now() - pendingTime;
-  slowSeeks = delay > 300 ? slowSeeks + 1 : 0;
+  slowSeeks = delay > 500 ? slowSeeks + 1 : 0;
   frameShown(video.currentTime);
-  if (slowSeeks >= 8) useStills('Máy đang tua chậm · đang dùng ảnh theo chặng');
+  if (slowSeeks >= 15) useStills('Máy đang tua chậm · đang dùng ảnh theo chặng');
 });
 
 video.addEventListener('error', () => {
@@ -252,7 +252,7 @@ function tick(now) {
       lastRequestedTime = Math.min(video.duration - 0.001, (index + 0.5) / fps);
       video.currentTime = lastRequestedTime;
     }
-    if (video.seeking && performance.now() - pendingTime > 8000) {
+    if (video.seeking && performance.now() - pendingTime > 15000) {
       useStills('Tạm dừng ảnh tĩnh · bấm thử lại để tiếp tục');
     }
   }
