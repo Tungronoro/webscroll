@@ -13,6 +13,8 @@ const journey = document.querySelector('#journey');
 const about = document.querySelector('#about-space');
 const bgm = document.querySelector('#bgm');
 const debugEl = document.querySelector('#debug');
+const debugCopy = document.querySelector('#debug-copy');
+if (debugCopy) debugCopy.addEventListener('click', () => { if (debugEl) { navigator.clipboard.writeText(debugEl.textContent).then(() => { debugCopy.textContent='Copied!'; setTimeout(()=>debugCopy.textContent='Copy debug',1200); }).catch(()=>{}); } });
 
 const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const ease = (a, b, v) => { const x = clamp((v - a) / (b - a)); return x * x * (3 - 2 * x); };
